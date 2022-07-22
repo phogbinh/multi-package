@@ -20,13 +20,13 @@
 \newcommand{\embbRa}{\alpha}
 \newcommand{\embbRaVec}{\vec{\embbRa}}
 \newcommand{\embbRaVecRelax}{\embbRaVec^{\prime}}
-\newcommand{\embbRaFour}[1]{\embbRa_{\embbUser, #1, \baseStation, \subchannel}}
-\newcommand{\embbRaFourRelax}[1]{\embbRaFour{#1}^{\prime}}
+\newcommand{\embbRaFour}{\embbRa_{\embbUser, \timeSlot, \baseStation, \subchannel}}
+\newcommand{\embbRaFourRelax}{\embbRaFour^{\prime}}
 \newcommand{\embbLa}{\gamma}
 \newcommand{\embbLaVec}{\vec{\embbLa}}
 \newcommand{\embbLaVecRelax}{\embbLaVec^{\prime}}
-\newcommand{\embbLaThree}[1]{\embbLa_{\embbUser, #1, \baseStation}}
-\newcommand{\embbLaThreeRelax}[1]{\embbLaThree{#1}^{\prime}}
+\newcommand{\embbLaThree}{\embbLa_{\embbUser, \timeSlot, \baseStation}}
+\newcommand{\embbLaThreeRelax}{\embbLaThree^{\prime}}
 \newcommand{\multiconnectivityCapacity}{\const{a}_{\embbUser}}
 \newcommand{\embbAverageRate}{\bar{\rate}_{\embbUser}}
 \newcommand{\embbAverageRateRelax}{\embbAverageRate^{\prime}}
@@ -34,10 +34,10 @@
 \newcommand{\urllcUser}{v}
 \newcommand{\urllcRa}{\beta}
 \newcommand{\urllcRaVec}{\vec{\urllcRa}}
-\newcommand{\urllcRaSix}[2]{\urllcRa_{\urllcUser, \embbUser, #1, #2, \baseStation, \subchannel}}
+\newcommand{\urllcRaSix}{\urllcRa_{\urllcUser, \embbUser, \timeSlot, \timeMinislot, \baseStation, \subchannel}}
 \newcommand{\urllcLa}{\delta}
 \newcommand{\urllcLaVec}{\vec{\delta}}
-\newcommand{\urllcLaFour}[2]{\urllcLa_{\urllcUser, #1, #2, \baseStation}}
+\newcommand{\urllcLaFour}{\urllcLa_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcRateThree}{\rate_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\demand}{R}
 \newcommand{\demandThree}{\demand_{\urllcUser, \timeSlot, \timeMinislot}}
