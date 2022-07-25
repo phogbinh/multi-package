@@ -20,16 +20,22 @@
 \newcommand{\embbRa}{\alpha}
 \newcommand{\embbRaVec}{\vec{\embbRa}}
 \newcommand{\embbRaVecRelax}{\embbRaVec^{\prime}}
+\newcommand{\embbRaVecOneRelaxCur}{\embbRaVecRelax_{\timeSlotCur}}
 \newcommand{\embbRaFour}{\embbRa_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRaFourRelax}{\embbRaFour^{\prime}}
+\newcommand{\embbRaFourRelaxCur}{\embbRa_{\embbUser, \timeSlotCur, \baseStation, \subchannel}^{\prime}}
 \newcommand{\embbLa}{\gamma}
 \newcommand{\embbLaVec}{\vec{\embbLa}}
 \newcommand{\embbLaVecRelax}{\embbLaVec^{\prime}}
+\newcommand{\embbLaVecOneRelaxCur}{\embbLaVecRelax_{\timeSlotCur}}
 \newcommand{\embbLaThree}{\embbLa_{\embbUser, \timeSlot, \baseStation}}
 \newcommand{\embbLaThreeRelax}{\embbLaThree^{\prime}}
+\newcommand{\embbLaThreeRelaxCur}{\embbLa_{\embbUser, \timeSlotCur, \baseStation}^{\prime}}
 \newcommand{\multiconnectivityCapacity}{\const{a}_{\embbUser}}
+\newcommand{\embbRateTwoRelaxCur}{\rate_{\embbUser, \timeSlotCur}^{\prime}}
 \newcommand{\embbAverageRateOne}{\bar{\rate}_{\embbUser}}
 \newcommand{\embbAverageRateOneRelax}{\embbAverageRateOne^{\prime}}
+\newcommand{\embbMovingAverageRateTwoRelaxCur}{\tilde{\rate}_{\embbUser, \timeSlotCur}^{\prime}}
 
 \newcommand{\urllcUser}{v}
 \newcommand{\urllcRa}{\beta}
@@ -43,6 +49,7 @@
 \newcommand{\demandThree}{\demand_{\urllcUser, \timeSlot, \timeMinislot}}
 
 \newcommand{\timeSlot}{n}
+\newcommand{\timeSlotCur}{\timeSlot_{0}}
 
 \newcommand{\timeMinislot}{m}
 
