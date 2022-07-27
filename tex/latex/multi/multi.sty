@@ -17,6 +17,7 @@
 % PROBLEM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\embbUser}{u}
+\newcommand{\embbUsersNum}{\const{\embbUser}}
 \newcommand{\embbRa}{\alpha}
 \newcommand{\embbRaVec}{\vec{\embbRa}}
 \newcommand{\embbRaVecRelax}{\embbRaVec^{\prime}}
@@ -32,10 +33,14 @@
 \newcommand{\embbLaThreeRelax}{\embbLaThree^{\prime}}
 \newcommand{\embbLaThreeRelaxCur}{\embbLa_{\embbUser, \timeSlotCur, \baseStation}^{\prime}}
 \newcommand{\multiconnectivityCapacity}{\const{a}_{\embbUser}}
+\newcommand{\embbPeakRateFour}{\peakRate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
+\newcommand{\embbRateTwoRelaxDecrement}{\rate_{\embbUser, \timeSlotDecrement}^{\prime}}
 \newcommand{\embbRateTwoRelaxCur}{\rate_{\embbUser, \timeSlotCur}^{\prime}}
 \newcommand{\embbAverageRateOne}{\bar{\rate}_{\embbUser}}
 \newcommand{\embbAverageRateOneRelax}{\embbAverageRateOne^{\prime}}
-\newcommand{\embbMovingAverageRateTwoRelaxCur}{\tilde{\rate}_{\embbUser, \timeSlotCur}^{\prime}}
+\newcommand{\embbMovingAverageRateTwoRelax}{\movingAverageRate_{\embbUser, \timeSlot}^{\prime}}
+\newcommand{\embbMovingAverageRateTwoRelaxDecrement}{\movingAverageRate_{\embbUser, \timeSlotDecrement}^{\prime}}
+\newcommand{\embbMovingAverageRateTwoRelaxCur}{\movingAverageRate_{\embbUser, \timeSlotCur}^{\prime}}
 
 \newcommand{\urllcUser}{v}
 \newcommand{\urllcRa}{\beta}
@@ -49,7 +54,10 @@
 \newcommand{\demandThree}{\demand_{\urllcUser, \timeSlot, \timeMinislot}}
 
 \newcommand{\timeSlot}{n}
+\newcommand{\timeSlotsNum}{\const{\timeSlot}}
+\newcommand{\timeSlotDecrement}{\timeSlot - 1}
 \newcommand{\timeSlotCur}{\timeSlot_{0}}
+\newcommand{\nonzeroTimeSlots}{\timeSlot = 1, \dots, \timeSlotsNum - 1}
 
 \newcommand{\timeMinislot}{m}
 
@@ -58,5 +66,12 @@
 \newcommand{\subchannel}{l}
 
 \newcommand{\rate}{r}
+\newcommand{\peakRate}{\const{\rate}}
+\newcommand{\movingAverageRate}{\tilde{\rate}}
+
+\newcommand{\unit}[1]{\left[#1\right]}
+\newcommand{\bpsl}{\unit{\frac{bits}{slot}}}
 
 \newcommand{\utilityCompositeFunction}[1]{\ln{#1}}
+
+\newcommand{\smoothingFactor}{\epsilon}
