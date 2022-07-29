@@ -14,6 +14,7 @@
 \renewcommand{\vec}[1]{\boldsymbol{\mathbf{#1}}}
 \newcommand{\set}[1]{\left\{#1\right\}}
 \newcommand{\tuple}[1]{(#1)}
+\newcommand{\subjectTo}{\middle|}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROBLEM
@@ -23,8 +24,10 @@
 \newcommand{\embbRa}{\alpha}
 \newcommand{\embbRaCandidate}{\hat{\embbRa}}
 \newcommand{\embbRaVec}{\vec{\embbRa}}
+\newcommand{\embbRaVecCandidate}{\hat{\embbRaVec}}
 \newcommand{\embbRaVecRelax}{\embbRaVec^{\prime}}
 \newcommand{\embbRaVecRelaxCandidate}{\vec{\embbRaCandidate}^{\prime}}
+\newcommand{\embbRaVecOneCandidate}{\hat{\embbRaVec}_{\timeSlot}}
 \newcommand{\embbRaVecOneRelaxCur}{\embbRaVecRelax_{\timeSlotCur}}
 \newcommand{\embbRaFour}{\embbRa_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRaFourRelax}{\embbRaFour^{\prime}}
@@ -33,8 +36,10 @@
 \newcommand{\embbLa}{\gamma}
 \newcommand{\embbLaCandidate}{\hat{\embbLa}}
 \newcommand{\embbLaVec}{\vec{\embbLa}}
+\newcommand{\embbLaVecCandidate}{\hat{\embbLaVec}}
 \newcommand{\embbLaVecRelax}{\embbLaVec^{\prime}}
 \newcommand{\embbLaVecRelaxCandidate}{\vec{\embbLaCandidate}^{\prime}}
+\newcommand{\embbLaVecOneCandidate}{\hat{\embbLaVec}_{\timeSlot}}
 \newcommand{\embbLaVecOneRelaxCur}{\embbLaVecRelax_{\timeSlotCur}}
 \newcommand{\embbLaThree}{\embbLa_{\embbUser, \timeSlot, \baseStation}}
 \newcommand{\embbLaThreeRelax}{\embbLaThree^{\prime}}
@@ -84,3 +89,5 @@
 \newcommand{\utilityCompositeFunction}[1]{\ln{#1}}
 
 \newcommand{\smoothingFactor}{\epsilon}
+
+\newcommand{\policy}{\mathcal{P}}
