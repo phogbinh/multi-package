@@ -49,8 +49,8 @@
 \newcommand{\embbPeakRateFour}{\peakRate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRateTwoRelaxDecrement}{\rate_{\embbUser, \timeSlotDecrement}^{\prime}}
 \newcommand{\embbRateTwoRelaxCur}{\rate_{\embbUser, \timeSlotCur}^{\prime}}
-\newcommand{\embbAverageRateOne}{\bar{\rate}_{\embbUser}}
-\newcommand{\embbAverageRateOneRelax}{\embbAverageRateOne^{\prime}}
+\newcommand{\embbAverageRateRandOne}{\bar{\rateRand}_{\embbUser}}
+\newcommand{\embbAverageRateRandOneRelax}{\embbAverageRateRandOne^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelax}{\movingAverageRate_{\embbUser, \timeSlot}^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelaxDecrement}{\movingAverageRate_{\embbUser, \timeSlotDecrement}^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelaxCur}{\movingAverageRate_{\embbUser, \timeSlotCur}^{\prime}}
@@ -62,9 +62,9 @@
 \newcommand{\urllcLa}{\delta}
 \newcommand{\urllcLaVec}{\vec{\delta}}
 \newcommand{\urllcLaFour}{\urllcLa_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
-\newcommand{\urllcRateThree}{\rate_{\urllcUser, \timeSlot, \timeMinislot}}
-\newcommand{\demand}{R}
-\newcommand{\demandThree}{\demand_{\urllcUser, \timeSlot, \timeMinislot}}
+\newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
+\newcommand{\demandRand}{R^{dm}}
+\newcommand{\demandRandThree}{\demandRand_{\urllcUser, \timeSlot, \timeMinislot}}
 
 \newcommand{\timeSlot}{n}
 \newcommand{\timeSlotsNum}{\const{\timeSlot}}
@@ -82,6 +82,7 @@
 \newcommand{\rate}{r}
 \newcommand{\peakRate}{\const{\rate}}
 \newcommand{\movingAverageRate}{\tilde{\rate}}
+\newcommand{\rateRand}{R}
 
 \newcommand{\unit}[1]{\left[#1\right]}
 \newcommand{\bpsl}{\unit{\frac{bits}{slot}}}
