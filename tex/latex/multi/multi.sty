@@ -22,11 +22,13 @@
 \newcommand{\zeroMat}{\mat{0}}
 \newcommand{\identityMat}{\mat{I}}
 \newcommand{\transpose}{\intercal}
+\DeclareMathOperator*{\argmax}{arg\,max}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROBLEM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\embbUser}{u}
+\newcommand{\embbUserCandidate}{\hat{\embbUser}}
 \newcommand{\embbUsersNum}{\const{\embbUser}}
 \newcommand{\embbRa}{\alpha}
 \newcommand{\embbRaCandidate}{\hat{\embbRa}}
@@ -37,6 +39,7 @@
 \newcommand{\embbRaVecOneCandidate}{\hat{\embbRaVec}_{\timeSlot}}
 \newcommand{\embbRaVecOneRelaxCur}{\embbRaVecRelax_{\timeSlotCur}}
 \newcommand{\embbRaFour}{\embbRa_{\embbUser, \timeSlot, \baseStation, \subchannel}}
+\newcommand{\embbRaFourCandidate}{\embbRaCandidate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRaFourRelax}{\embbRaFour^{\prime}}
 \newcommand{\embbRaFourRelaxCandidate}{\embbRaCandidate_{\embbUser, \timeSlot, \baseStation, \subchannel}^{\prime}}
 \newcommand{\embbRaFourRelaxCur}{\embbRa_{\embbUser, \timeSlotCur, \baseStation, \subchannel}^{\prime}}
@@ -54,11 +57,13 @@
 \newcommand{\embbLaThreeRelaxCur}{\embbLa_{\embbUser, \timeSlotCur, \baseStation}^{\prime}}
 \newcommand{\multiconnectivityCapacity}{\const{a}_{\embbUser}}
 \newcommand{\embbPeakRateFour}{\peakRate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
+\newcommand{\embbPeakRateFourUserCandidate}{\peakRate_{\embbUserCandidate, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRateTwoRelaxDecrement}{\rate_{\embbUser, \timeSlotDecrement}^{\prime}}
 \newcommand{\embbRateTwoRelaxCur}{\rate_{\embbUser, \timeSlotCur}^{\prime}}
 \newcommand{\embbAverageRateRandOne}{\averageRateRand_{\embbUser}}
 \newcommand{\embbAverageRateRandOneRelax}{\embbAverageRateRandOne^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelax}{\movingAverageRate_{\embbUser, \timeSlot}^{\prime}}
+\newcommand{\embbMovingAverageRateTwoRelaxUserCandidate}{\movingAverageRate_{\embbUserCandidate, \timeSlot}^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelaxDecrement}{\movingAverageRate_{\embbUser, \timeSlotDecrement}^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelaxCur}{\movingAverageRate_{\embbUser, \timeSlotCur}^{\prime}}
 
