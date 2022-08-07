@@ -36,10 +36,12 @@
 \newcommand{\embbRaVecOneRelaxCur}{\embbRaVecRelax_{\timeSlotCur}}
 \newcommand{\embbRaFour}{\embbRa_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRaFourCandidate}{\embbRaCandidate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
+\newcommand{\embbRaFourCandidateCur}{\embbRaCandidate_{\embbUser, \timeSlotCur, \baseStation, \subchannel}}
 \newcommand{\embbRaFourRelax}{\embbRaFour^{\prime}}
 \newcommand{\embbRaFourRelaxCandidate}{\embbRaCandidate_{\embbUser, \timeSlot, \baseStation, \subchannel}^{\prime}}
 \newcommand{\embbRaFourRelaxCur}{\embbRa_{\embbUser, \timeSlotCur, \baseStation, \subchannel}^{\prime}}
 \newcommand{\embbPeakRateFour}{\peakRate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
+\newcommand{\embbPeakRateFourCur}{\peakRate_{\embbUser, \timeSlotCur, \baseStation, \subchannel}}
 \newcommand{\embbPeakRateFourUserCandidate}{\peakRate_{\embbUserCandidate, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRateTwoRelaxDecrement}{\rate_{\embbUser, \timeSlotDecrement}^{\prime}}
 \newcommand{\embbRateTwoRelaxCur}{\rate_{\embbUser, \timeSlotCur}^{\prime}}
@@ -53,11 +55,18 @@
 \newcommand{\urllcUser}{v}
 \newcommand{\urllcRa}{\beta}
 \newcommand{\urllcRaVec}{\vec{\urllcRa}}
+\newcommand{\urllcRaVecTwoCur}{\urllcRaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcRaSix}{\urllcRa_{\urllcUser, \embbUser, \timeSlot, \timeMinislot, \baseStation, \subchannel}}
+\newcommand{\urllcRaSixCur}{\urllcRa_{\urllcUser, \embbUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
 \newcommand{\urllcLa}{\delta}
 \newcommand{\urllcLaVec}{\vec{\delta}}
+\newcommand{\urllcLaVecTwoCur}{\urllcLaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcLaFour}{\urllcLa_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
+\newcommand{\urllcLaFourCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
+\newcommand{\urllcRateThreeCur}{\rate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
+\newcommand{\demand}{\const{\rate}^{dm}}
+\newcommand{\demandThreeCur}{\demand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRand}{R^{dm}}
 \newcommand{\demandRandThree}{\demandRand_{\urllcUser, \timeSlot, \timeMinislot}}
 
@@ -68,6 +77,7 @@
 \newcommand{\nonzeroTimeSlots}{\timeSlot = 1, \dots, \timeSlotsNum - 1}
 
 \newcommand{\timeMinislot}{m}
+\newcommand{\timeMinislotCur}{\timeMinislot_{0}}
 
 \newcommand{\baseStation}{s}
 \newcommand{\baseStationsNum}{\const{\baseStation}}
