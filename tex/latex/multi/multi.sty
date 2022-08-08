@@ -56,19 +56,25 @@
 \newcommand{\urllcRa}{\beta}
 \newcommand{\urllcRaVec}{\vec{\urllcRa}}
 \newcommand{\urllcRaVecTwoCur}{\urllcRaVec_{\timeSlotCur, \timeMinislotCur}}
+\newcommand{\urllcRaVecOneSlotCur}{\urllcRaVec_{\timeSlotCur}}
 \newcommand{\urllcRaSix}{\urllcRa_{\urllcUser, \embbUser, \timeSlot, \timeMinislot, \baseStation, \subchannel}}
 \newcommand{\urllcRaSixCur}{\urllcRa_{\urllcUser, \embbUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
+\newcommand{\urllcRaSixSlotCur}{\urllcRa_{\urllcUser, \embbUser, \timeSlotCur, \timeMinislot, \baseStation, \subchannel}}
 \newcommand{\urllcLa}{\delta}
 \newcommand{\urllcLaVec}{\vec{\urllcLa}}
 \newcommand{\urllcLaVecTwoCur}{\urllcLaVec_{\timeSlotCur, \timeMinislotCur}}
+\newcommand{\urllcLaVecOneSlotCur}{\urllcLaVec_{\timeSlotCur}}
 \newcommand{\urllcLaFour}{\urllcLa_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcLaFourCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
+\newcommand{\urllcLaFourSlotCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislot, \baseStation}}
 \newcommand{\urllcRateThreeCur}{\rate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
+\newcommand{\urllcRateRandThreeSlotCur}{\rateRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
 \newcommand{\demand}{\const{\rate}^{dm}}
 \newcommand{\demandThreeCur}{\demand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRand}{\rateRand^{dm}}
 \newcommand{\demandRandThree}{\demandRand_{\urllcUser, \timeSlot, \timeMinislot}}
+\newcommand{\demandRandThreeSlotCur}{\demandRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
 
 \newcommand{\timeSlot}{n}
 \newcommand{\timeSlotsNum}{\const{\timeSlot}}
@@ -77,6 +83,7 @@
 \newcommand{\nonzeroTimeSlots}{\timeSlot = 1, \dots, \timeSlotsNum - 1}
 
 \newcommand{\timeMinislot}{m}
+\newcommand{\timeMinislotsNum}{\const{\timeMinislot}}
 \newcommand{\timeMinislotCur}{\timeMinislot_{0}}
 
 \newcommand{\baseStation}{s}
