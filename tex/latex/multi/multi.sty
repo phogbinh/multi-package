@@ -77,6 +77,8 @@
 \newcommand{\urllcRateThreeCur}{\rate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcRateRandThreeSlotCur}{\rateRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
+\newcommand{\urllcMaxRate}{\const{\rate}^{mx}}
+\newcommand{\urllcMaxRateThreeCur}{\urllcMaxRate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demand}{\const{\rate}^{dm}}
 \newcommand{\demandThreeCur}{\demand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRand}{\rateRand^{dm}}
@@ -85,6 +87,8 @@
 \newcommand{\cost}{c}
 \newcommand{\costThree}{\cost_{\timeSlot, \baseStation, \subchannel}}
 \newcommand{\costThreeCur}{\cost_{\timeSlotCur, \baseStation, \subchannel}}
+\newcommand{\minCost}{\cost^{mn}}
+\newcommand{\minCostOneCur}{\minCost_{\timeSlotCur}}
 
 \newcommand{\timeSlot}{n}
 \newcommand{\timeSlotsNum}{\const{\timeSlot}}
