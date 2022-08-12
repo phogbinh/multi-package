@@ -55,6 +55,7 @@
 \newcommand{\embbMovingAverageRateTwoRelaxCur}{\movingAverageRate_{\embbUser, \timeSlotCur}^{\prime}}
 
 \newcommand{\urllcUser}{v}
+\newcommand{\urllcUserCandidate}{\hat{\urllcUser}}
 \newcommand{\urllcRa}{\beta}
 \newcommand{\urllcRaVec}{\vec{\urllcRa}}
 \newcommand{\urllcRaVecTwoCur}{\urllcRaVec_{\timeSlotCur, \timeMinislotCur}}
@@ -64,8 +65,10 @@
 \newcommand{\urllcRaSixCur}{\urllcRa_{\urllcUser, \embbUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
 \newcommand{\urllcRaSixSlotCur}{\urllcRa_{\urllcUser, \embbUser, \timeSlotCur, \timeMinislot, \baseStation, \subchannel}}
 \newcommand{\urllcNpRa}{\gamma}
+\newcommand{\urllcNpRaCandidate}{\hat{\urllcNpRa}}
 \newcommand{\urllcNpRaVec}{\vec{\urllcNpRa}}
 \newcommand{\urllcNpRaVecTwoCur}{\urllcNpRaVec_{\timeSlotCur, \timeMinislotCur}}
+\newcommand{\urllcNpRaFiveCandidateCur}{\urllcNpRaCandidate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
 \newcommand{\urllcNpRaFiveCur}{\urllcNpRa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
 \newcommand{\urllcLa}{\delta}
 \newcommand{\urllcLaCandidate}{\hat{\urllcLa}}
@@ -75,6 +78,7 @@
 \newcommand{\urllcLaVecTwoSlotCur}{\urllcLaVec_{\timeSlotCur, \timeMinislot}}
 \newcommand{\urllcLaFour}{\urllcLa_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcLaFourCandidateCur}{\urllcLaCandidate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
+\newcommand{\urllcLaFourCandidateUserCandidateCur}{\urllcLaCandidate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcLaFourCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcLaFourSlotCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislot, \baseStation}}
 \newcommand{\urllcRateThreeCur}{\rate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
@@ -84,8 +88,10 @@
 \newcommand{\urllcPeakRateFourCurBaseStationCandidate}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStationCandidate}}
 \newcommand{\urllcMaxRate}{\const{\rate}^{mx}}
 \newcommand{\urllcMaxRateThree}{\urllcMaxRate_{\urllcUser, \timeSlot, \timeMinislot}}
+\newcommand{\urllcMaxRateThreeUserCandidateCur}{\urllcMaxRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcMaxRateThreeCur}{\urllcMaxRate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demand}{\const{\rate}^{dm}}
+\newcommand{\demandThreeUserCandidateCur}{\demand_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandThreeCur}{\demand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRand}{\rateRand^{dm}}
 \newcommand{\demandRandThree}{\demandRand_{\urllcUser, \timeSlot, \timeMinislot}}
