@@ -68,17 +68,20 @@
 \newcommand{\urllcNpRaVecTwoCur}{\urllcNpRaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcNpRaFiveCur}{\urllcNpRa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
 \newcommand{\urllcLa}{\delta}
+\newcommand{\urllcLaCandidate}{\hat{\urllcLa}}
 \newcommand{\urllcLaVec}{\vec{\urllcLa}}
 \newcommand{\urllcLaVecTwoCur}{\urllcLaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcLaVecOneSlotCur}{\urllcLaVec_{\timeSlotCur}}
 \newcommand{\urllcLaVecTwoSlotCur}{\urllcLaVec_{\timeSlotCur, \timeMinislot}}
 \newcommand{\urllcLaFour}{\urllcLa_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
+\newcommand{\urllcLaFourCandidateCur}{\urllcLaCandidate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcLaFourCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcLaFourSlotCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislot, \baseStation}}
 \newcommand{\urllcRateThreeCur}{\rate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcRateRandThreeSlotCur}{\rateRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
 \newcommand{\urllcPeakRateFour}{\peakRate_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
+\newcommand{\urllcPeakRateFourCurBaseStationCandidate}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStationCandidate}}
 \newcommand{\urllcMaxRate}{\const{\rate}^{mx}}
 \newcommand{\urllcMaxRateThree}{\urllcMaxRate_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcMaxRateThreeCur}{\urllcMaxRate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
@@ -106,6 +109,7 @@
 
 \newcommand{\baseStation}{s}
 \newcommand{\baseStationsNum}{\const{\baseStation}}
+\newcommand{\baseStationCandidate}{\hat{\baseStation}}
 
 \newcommand{\subchannel}{l}
 \newcommand{\subchannelsNum}{\const{\subchannel}}
