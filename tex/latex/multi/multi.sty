@@ -21,6 +21,7 @@
 \DeclareMathOperator*{\argmax}{arg\,max}
 \newcommand{\tuple}[1]{(#1)}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\card}[1]{\mathbf{card}#1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROBLEM
@@ -99,6 +100,7 @@
 \newcommand{\cost}{c}
 \newcommand{\costThree}{\cost_{\timeSlot, \baseStation, \subchannel}}
 \newcommand{\costThreeCur}{\cost_{\timeSlotCur, \baseStation, \subchannel}}
+\newcommand{\costThreeCurSubchannelCandidate}{\cost_{\timeSlotCur, \baseStation, \subchannelCandidate}}
 \newcommand{\minCost}{\cost^{mn}}
 \newcommand{\minCostOne}{\minCost_{\timeSlot}}
 \newcommand{\minCostOneCur}{\minCost_{\timeSlotCur}}
@@ -121,6 +123,7 @@
 \newcommand{\baseStationCandidate}{\hat{\baseStation}}
 
 \newcommand{\subchannel}{l}
+\newcommand{\subchannelCandidate}{\hat{\subchannel}}
 \newcommand{\subchannelsNum}{\const{\subchannel}}
 
 \newcommand{\rate}{r}
