@@ -111,6 +111,7 @@
 \newcommand{\maxCost}{\cost^{mx}}
 \newcommand{\maxCostOne}{\maxCost_{\timeSlot}}
 \newcommand{\maxCostOneCur}{\maxCost_{\timeSlotCur}}
+\newcommand{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
 
 \newcommand{\timeSlot}{n}
 \newcommand{\timeSlotsNum}{\const{\timeSlot}}
@@ -172,9 +173,9 @@
     \begin{cases}
       1 &
         \begin{aligned}
-          &\sum_{\urllcUserCandidate = 0}^{\urllcUser - 1}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}\\
+          &\sum_{\urllcUserCandidate = 0}^{\urllcUser - 1}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\\
           \leq &\subchannel\\
-          \leq &\left(\sum_{\urllcUserCandidate = 0}^{\urllcUser}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}\right) - 1
+          \leq &\left(\sum_{\urllcUserCandidate = 0}^{\urllcUser}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\right) - 1
         \end{aligned}\\
       0 &\text{otherwise}
     \end{cases}
