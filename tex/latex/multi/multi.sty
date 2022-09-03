@@ -58,7 +58,9 @@
 \newcommand{\urllcUser}{v}
 \newcommand{\urllcUserCandidate}{\hat{\urllcUser}}
 \newcommand{\urllcRa}{\beta}
+\newcommand{\urllcRaCandidate}{\hat{\urllcRa}}
 \newcommand{\urllcRaVec}{\vec{\urllcRa}}
+\newcommand{\urllcRaVecCandidate}{\hat{\urllcRaVec}}
 \newcommand{\urllcRaVecTwoCur}{\urllcRaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcRaVecOneSlotCur}{\urllcRaVec_{\timeSlotCur}}
 \newcommand{\urllcRaVecTwoSlotCur}{\urllcRaVec_{\timeSlotCur, \timeMinislot}}
@@ -68,12 +70,14 @@
 \newcommand{\urllcNpRa}{\gamma}
 \newcommand{\urllcNpRaCandidate}{\hat{\urllcNpRa}}
 \newcommand{\urllcNpRaVec}{\vec{\urllcNpRa}}
+\newcommand{\urllcNpRaVecCandidate}{\hat{\urllcNpRaVec}}
 \newcommand{\urllcNpRaVecTwoCur}{\urllcNpRaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcNpRaFiveCandidateCur}{\urllcNpRaCandidate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
 \newcommand{\urllcNpRaFiveCur}{\urllcNpRa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation, \subchannel}}
 \newcommand{\urllcLa}{\delta}
 \newcommand{\urllcLaCandidate}{\hat{\urllcLa}}
 \newcommand{\urllcLaVec}{\vec{\urllcLa}}
+\newcommand{\urllcLaVecCandidate}{\hat{\urllcLaVec}}
 \newcommand{\urllcLaVecTwoCur}{\urllcLaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcLaVecOneSlotCur}{\urllcLaVec_{\timeSlotCur}}
 \newcommand{\urllcLaVecTwoSlotCur}{\urllcLaVec_{\timeSlotCur, \timeMinislot}}
@@ -107,6 +111,7 @@
 \newcommand{\maxCost}{\cost^{mx}}
 \newcommand{\maxCostOne}{\maxCost_{\timeSlot}}
 \newcommand{\maxCostOneCur}{\maxCost_{\timeSlotCur}}
+\newcommand{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
 
 \newcommand{\timeSlot}{n}
 \newcommand{\timeSlotsNum}{\const{\timeSlot}}
@@ -148,4 +153,30 @@
     1 &\embbUser = \min_{\embbUserCandidate}{\argmax_{\embbUserCandidate}{\frac{\embbPeakRateFourUserCandidate}{\embbMovingAverageRateTwoRelaxUserCandidate}}}\\
     0 &\text{otherwise}
   \end{cases}
+}
+
+\newcommand
+{\nearestAssociationLa}
+{
+  \forall\urllcUser \colon \urllcLaFourCandidateCur =
+    \begin{cases}
+      1 &\baseStation = \min_{\baseStationCandidate}{\argmax_{\baseStationCandidate}{\urllcPeakRateFourCurBaseStationCandidate}}\\
+      0 &\text{otherwise}
+    \end{cases}
+}
+
+\newcommand
+{\nearestAssociation}
+{
+  \nearestAssociationLa,\\
+  \forall\baseStation \colon \forall\urllcUser \colon \urllcNpRaFiveCandidateCur =
+    \begin{cases}
+      1 &
+        \begin{aligned}
+          &\sum_{\urllcUserCandidate = 0}^{\urllcUser - 1}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\\
+          \leq &\subchannel\\
+          \leq &\left(\sum_{\urllcUserCandidate = 0}^{\urllcUser}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\right) - 1
+        \end{aligned}\\
+      0 &\text{otherwise}
+    \end{cases}
 }
