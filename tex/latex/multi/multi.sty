@@ -151,7 +151,7 @@
 \newcommand
 {\embbPolicy}
 {
-\embbRaFourCandidate =
+\forall\baseStation \colon \forall\subchannel \colon \forall\embbUser \colon \embbRaFourCandidate =
   \begin{cases}
     1 &\embbUser = \min_{\embbUserCandidate}{\argmax_{\embbUserCandidate}{\frac{\embbPeakRateFourUserCandidate}{\embbMovingAverageRateTwoRelaxUserCandidate}}}\\
     0 &\text{otherwise}
