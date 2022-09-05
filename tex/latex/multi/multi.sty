@@ -171,25 +171,25 @@
 \newcommand
 {\nearestAssociationLa}
 {
-  \forall\urllcUser \colon \urllcLaFourCandidateCur =
-    \begin{cases}
-      1 &\baseStation = \min_{\baseStationCandidate}{\argmax_{\baseStationCandidate}{\urllcPeakRateFourCurBaseStationCandidate}}\\
-      0 &\text{otherwise}
-    \end{cases}
+\forall\urllcUser \colon \urllcLaFourCandidateCur =
+  \begin{cases}
+    1 &\baseStation = \min_{\baseStationCandidate}{\argmax_{\baseStationCandidate}{\urllcPeakRateFourCurBaseStationCandidate}}\\
+    0 &\text{otherwise}
+  \end{cases}
 }
 
 \newcommand
 {\nearestAssociation}
 {
-  \nearestAssociationLa,\\
-  \forall\baseStation \colon \forall\urllcUser \colon \urllcNpRaFiveCandidateCur =
-    \begin{cases}
-      1 &
-        \begin{aligned}
-          &\sum_{\urllcUserCandidate = 0}^{\urllcUser - 1}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\\
-          \leq &\subchannel\\
-          \leq &\left(\sum_{\urllcUserCandidate = 0}^{\urllcUser}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\right) - 1
-        \end{aligned}\\
-      0 &\text{otherwise}
-    \end{cases}
+\nearestAssociationLa,\\
+\forall\baseStation \colon \forall\urllcUser \colon \urllcNpRaFiveCandidateCur =
+  \begin{cases}
+    1 &
+      \begin{aligned}
+        &\sum_{\urllcUserCandidate = 0}^{\urllcUser - 1}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\\
+        \leq &\subchannel\\
+        \leq &\left(\sum_{\urllcUserCandidate = 0}^{\urllcUser}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\right) - 1
+      \end{aligned}\\
+    0 &\text{otherwise}
+  \end{cases}
 }
