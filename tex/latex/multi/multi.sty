@@ -149,6 +149,16 @@
 \newcommand{\smoothingFactor}{\epsilon}
 
 \newcommand
+{\embbMovingAverageRateInitialValuePolicy}
+{
+\forall\embbUser \colon \forall\baseStation \colon \forall\subchannel \colon \embbRaFourRelaxCandidate =
+  \begin{cases}
+    \frac{1}{\embbUsersNum} &\timeSlot = 0\\
+    0 &\nonzeroTimeSlots
+  \end{cases}
+}
+
+\newcommand
 {\embbPolicy}
 {
 \forall\baseStation \colon \forall\subchannel \colon \embbRaFourCandidate =
