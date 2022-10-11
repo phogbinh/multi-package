@@ -18,6 +18,7 @@
 \newcommand{\subjectTo}{\middle|}
 \newcommand{\set}[1]{\mathcal{#1}}
 \newcommand{\mat}[1]{\mathrm{#1}}
+\DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \newcommand{\tuple}[1]{(#1)}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
@@ -93,6 +94,7 @@
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcRateRandThreeSlotCur}{\rateRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
 \newcommand{\urllcPeakRateFour}{\peakRate_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
+\newcommand{\urllcPeakRateFourUserCandidateCur}{\peakRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCur}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCurBaseStationCandidate}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStationCandidate}}
 \newcommand{\urllcMaxRate}{\const{\rate}^{mx}}
@@ -118,6 +120,7 @@
 \newcommand{\maxCostOne}{\maxCost_{\timeSlot}}
 \newcommand{\maxCostOneCur}{\maxCost_{\timeSlotCur}}
 \newcommand{\maxCostTwoCur}{\maxCost_{\timeSlotCur, \baseStation}}
+\newcommand{\associationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcPeakRateFourUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
 \newcommand{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
 
 \newcommand{\timeSlot}{n}
@@ -193,6 +196,26 @@
         &\sum_{\urllcUserCandidate = 0}^{\urllcUser - 1}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\\
         \leq &\subchannel\\
         \leq &\left(\sum_{\urllcUserCandidate = 0}^{\urllcUser}{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}\right) - 1
+      \end{aligned}\\
+    0 &\text{otherwise}
+  \end{cases}
+}
+
+\newcommand
+{\tightestAssociation}
+{
+\forall\urllcUser \colon \urllcLaFourCandidateCur =
+  \begin{cases}
+    1 &\baseStation = \min_{\baseStationCandidate}{\argmin_{\baseStationCandidate}{\minCostTwoCurBaseStationCandidate \ceil{\frac{\demandThreeCur}{\urllcPeakRateFourCurBaseStationCandidate}}}}\\
+    0 &\text{otherwise}
+  \end{cases},\\
+\forall\baseStation \colon \forall\urllcUser \colon \urllcNpRaFiveCandidateCur =
+  \begin{cases}
+    1 &
+      \begin{aligned}
+        &\sum_{\urllcUserCandidate = 0}^{\urllcUser - 1}{\associationSubchannelsNumCandidateUserCandidateCur}\\
+        \leq &\subchannel\\
+        \leq &\left(\sum_{\urllcUserCandidate = 0}^{\urllcUser}{\associationSubchannelsNumCandidateUserCandidateCur}\right) - 1
       \end{aligned}\\
     0 &\text{otherwise}
   \end{cases}
