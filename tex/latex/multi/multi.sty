@@ -22,6 +22,7 @@
 \newcommand{\tuple}[1]{(#1)}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 \newcommand{\card}[1]{\mathbf{card}#1}
+\newcommand{\approximationRatio}{\rho}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROBLEM
@@ -111,9 +112,11 @@
 \newcommand{\minCost}{\cost^{mn}}
 \newcommand{\minCostOne}{\minCost_{\timeSlot}}
 \newcommand{\minCostOneCur}{\minCost_{\timeSlotCur}}
+\newcommand{\minCostTwoCur}{\minCost_{\timeSlotCur, \baseStation}}
 \newcommand{\maxCost}{\cost^{mx}}
 \newcommand{\maxCostOne}{\maxCost_{\timeSlot}}
 \newcommand{\maxCostOneCur}{\maxCost_{\timeSlotCur}}
+\newcommand{\maxCostTwoCur}{\maxCost_{\timeSlotCur, \baseStation}}
 \newcommand{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
 
 \newcommand{\timeSlot}{n}
