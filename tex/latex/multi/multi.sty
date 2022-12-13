@@ -29,6 +29,7 @@
 % PROBLEM
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\embbUser}{u}
+\newcommand{\embbUserSet}{\set{\embbUser}}
 \newcommand{\embbUsersNum}{\const{\embbUser}}
 \newcommand{\embbUserCandidate}{\hat{\embbUser}}
 \newcommand{\embbRa}{\alpha}
@@ -58,6 +59,7 @@
 \newcommand{\embbAverageRateRandOneRelax}{\embbAverageRateRandOne^{\prime}}
 
 \newcommand{\urllcUser}{v}
+\newcommand{\urllcUserSet}{\set{\urllcUser}}
 \newcommand{\urllcUserCandidate}{\hat{\urllcUser}}
 \newcommand{\urllcRa}{\beta}
 \newcommand{\urllcRaCandidate}{\hat{\urllcRa}}
@@ -124,20 +126,24 @@
 \newcommand{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
 
 \newcommand{\timeSlot}{n}
+\newcommand{\timeSlotSet}{\set{\timeSlot}}
 \newcommand{\timeSlotsNum}{\const{\timeSlot}}
 \newcommand{\timeSlotDecrement}{\timeSlot - 1}
 \newcommand{\timeSlotCur}{\timeSlot_{0}}
 \newcommand{\nonzeroTimeSlots}{\timeSlot = 1, \dots, \timeSlotsNum - 1}
 
 \newcommand{\timeMinislot}{m}
+\newcommand{\timeMinislotSet}{\set{\timeMinislot}}
 \newcommand{\timeMinislotsNum}{\const{\timeMinislot}}
 \newcommand{\timeMinislotCur}{\timeMinislot_{0}}
 
 \newcommand{\baseStation}{s}
+\newcommand{\baseStationSet}{\set{\baseStation}}
 \newcommand{\baseStationsNum}{\const{\baseStation}}
 \newcommand{\baseStationCandidate}{\hat{\baseStation}}
 
 \newcommand{\subchannel}{l}
+\newcommand{\subchannelSet}{\set{\subchannel}}
 \newcommand{\subchannelCandidate}{\hat{\subchannel}}
 \newcommand{\subchannelsNum}{\const{\subchannel}}
 
