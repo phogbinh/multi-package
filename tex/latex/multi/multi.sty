@@ -8,6 +8,12 @@
 \ProcessOptions\relax
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MULTI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\comma}{,}
+\newcommand{\period}{.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MATH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\const}{\mathfrak}
@@ -25,6 +31,12 @@
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 \newcommand{\card}[1]{\mathbf{card}#1}
 \newcommand{\approximationRatio}{\rho}
+\newcommand{\domainToRange}{\to}
+\newcommand{\mathSet}[1]{\mathbb{#1}}
+\newcommand{\nonnegativeSet}[1]{#1_{+}}
+\newcommand{\sampleSpaceSet}{\mathSet{S}}
+\newcommand{\integralSet}{\mathSet{Z}}
+\newcommand{\nonnegativeIntegralSet}{\nonnegativeSet{\integralSet}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROBLEM
@@ -49,9 +61,12 @@
 \newcommand{\embbRaFourRelaxCur}{\embbRa_{\embbUser, \timeSlotCur, \baseStation, \subchannel}^{\prime}}
 \newcommand{\embbRateTwoRelaxDecrement}{\rate_{\embbUser, \timeSlotDecrement}^{\prime}}
 \newcommand{\embbRateTwoRelaxCur}{\rate_{\embbUser, \timeSlotCur}^{\prime}}
+\newcommand{\embbRateRandTwo}{\rateRand_{\embbUser, \timeSlot}}
+\newcommand{\embbRateRandFour}{\rateRand_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbPeakRateFour}{\peakRate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbPeakRateFourCur}{\peakRate_{\embbUser, \timeSlotCur, \baseStation, \subchannel}}
 \newcommand{\embbPeakRateFourUserCandidate}{\peakRate_{\embbUserCandidate, \timeSlot, \baseStation, \subchannel}}
+\newcommand{\embbPeakRateRandFour}{\peakRateRand_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbMovingAverageRateTwoRelax}{\movingAverageRate_{\embbUser, \timeSlot}^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelaxUserCandidate}{\movingAverageRate_{\embbUserCandidate, \timeSlot}^{\prime}}
 \newcommand{\embbMovingAverageRateTwoRelaxDecrement}{\movingAverageRate_{\embbUser, \timeSlotDecrement}^{\prime}}
@@ -153,6 +168,7 @@
 \newcommand{\peakRate}{\const{\rate}}
 \newcommand{\movingAverageRate}{\tilde{\rate}}
 \newcommand{\rateRand}{R}
+\newcommand{\peakRateRand}{\const{\rateRand}}
 \newcommand{\averageRateRand}{\bar{\rateRand}}
 
 \newcommand{\unit}[1]{\left[#1\right]}
@@ -227,4 +243,40 @@
       \end{aligned}\\
     0 &\text{otherwise}
   \end{cases}
+}
+
+\newcommand
+{\embbProblem}
+[1]
+{
+\begin{maxi!}
+  {\embbRaVec}{\sum_{\embbUser}{\utilityCompositeFunction{\embbAverageRateRandOne}}}
+  {}{}
+  \addConstraint
+    {\sum_{\embbUser}{\embbRaFour}}
+    {\leq 1}
+    {\forall\timeSlot \forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\embbRaFour}
+    {\in \setDst{0, 1}}
+    {\forall\embbUser \forall\timeSlot \forall\baseStation \forall\subchannel}{#1}
+\end{maxi!}
+}
+
+\newcommand
+{\relaxedEmbbProblem}
+[1]
+{
+\begin{maxi!}
+  {\embbRaVecRelax}{\sum_{\embbUser}{\utilityCompositeFunction{\embbAverageRateRandOneRelax}}}
+  {}{}
+  \addConstraint
+    {\sum_{\embbUser}{\embbRaFourRelax}}
+    {\leq 1}
+    {\forall\timeSlot \forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\embbRaFourRelax}
+    {\geq 0}
+    {\forall\embbUser \forall\timeSlot \forall\baseStation \forall\subchannel}{#1}
+\end{maxi!}
 }
