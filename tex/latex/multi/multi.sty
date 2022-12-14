@@ -1,6 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{multi}[2022/07/22 Multi Package]
 
+\RequirePackage{amsthm}
 \RequirePackage{amssymb}
 \RequirePackage{optidef}
 
@@ -10,9 +11,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MULTI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}
+
 \newcommand{\comma}{,}
 \newcommand{\period}{.}
 \newcommand{\proofFootnote}{\footnote{Proof in supplementary}}
+
+\newcommand
+{\proofSupplementary}
+{
+\begin{proof}
+  The proof is available in the supplementary.
+\end{proof}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MATH
@@ -283,5 +294,23 @@
     {\embbRaFourRelax}
     {\geq 0}
     {\forall\embbUser \forall\timeSlot \forall\baseStation \forall\subchannel}{#1}
+\end{maxi!}
+}
+
+\newcommand
+{\gradientProblem}
+[1]
+{
+\begin{maxi!}
+  {\embbRaVecOneRelaxCur}{\sum_{\embbUser}{\frac{\embbRateTwoRelaxCur}{\embbMovingAverageRateTwoRelaxCur}}}
+  {}{}
+  \addConstraint
+    {\sum_{\embbUser}{\embbRaFourRelaxCur}}
+    {\leq 1}
+    {\forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\embbRaFourRelaxCur}
+    {\geq 0}
+    {\forall\embbUser \forall\baseStation \forall\subchannel}{#1}
 \end{maxi!}
 }
