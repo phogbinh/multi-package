@@ -66,6 +66,7 @@
 \newcommand{\embbRaVecRelax}{\embbRaVec^{\prime}}
 \newcommand{\embbRaVecRelaxCandidate}{\vec{\embbRaCandidate}^{\prime}}
 \newcommand{\embbRaVecOneCandidate}{\embbRaVecCandidate_{\timeSlot}}
+\newcommand{\embbRaVecOneCandidateCur}{\embbRaVecCandidate_{\timeSlotCur}}
 \newcommand{\embbRaVecOneRelaxCur}{\embbRaVecRelax_{\timeSlotCur}}
 \newcommand{\embbRaFour}{\embbRa_{\embbUser, \timeSlot, \baseStation, \subchannel}}
 \newcommand{\embbRaFourCandidate}{\embbRaCandidate_{\embbUser, \timeSlot, \baseStation, \subchannel}}
@@ -129,11 +130,12 @@
 \newcommand{\urllcLaFourSlotCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislot, \baseStation}}
 \newcommand{\urllcRateThreeCur}{\rate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
-\newcommand{\urllcRateRandThreeSlotCur}{\rateRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
+\newcommand{\urllcRateRandThreeSlotCur}{\sum_{\embbUser, \baseStation, \subchannel}{\urllcPeakRateRandFourSlotCur \urllcRaSixSlotCur}}
 \newcommand{\urllcPeakRateFour}{\peakRate_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcPeakRateFourUserCandidateCur}{\peakRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCur}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCurBaseStationCandidate}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStationCandidate}}
+\newcommand{\urllcPeakRateRandFourSlotCur}{\peakRateRand_{\urllcUser, \timeSlotCur, \timeMinislot, \baseStation}}
 \newcommand{\urllcMaxRate}{\const{\rate}^{mx}}
 \newcommand{\urllcMaxRateThree}{\urllcMaxRate_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcMaxRateThreeUserCandidateCur}{\urllcMaxRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur}}
@@ -314,5 +316,39 @@
     {\embbRaFourRelaxCur}
     {\geq 0}
     {\forall\embbUser \forall\baseStation \forall\subchannel}{#1}
+\end{maxi!}
+}
+
+\newcommand
+{\urllcProblem}
+[1]
+{
+\begin{maxi!}
+  {\urllcRaVecOneSlotCur, \urllcLaVecOneSlotCur}{\sum_{\embbUser}{\frac{\embbRateTwoRelaxCur}{\embbMovingAverageRateTwoRelaxCur}}}
+  {}{}
+  \addConstraint
+    {\sum_{\baseStation}{\urllcLaFourSlotCur}}
+    {\leq 1}
+    {\forall\urllcUser \forall\timeMinislot}
+  \addConstraint
+    {\urllcRaSixSlotCur}
+    {\leq \urllcLaFourSlotCur}
+    {\forall\urllcUser \forall\embbUser \forall\timeMinislot \forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\urllcLaFourSlotCur}
+    {\in \setDst{0, 1}}
+    {\forall\urllcUser \forall\timeMinislot \forall\baseStation}
+  \addConstraint
+    {\sum_{\urllcUser}{\urllcRaSixSlotCur}}
+    {\leq \embbRaFourCandidateCur}
+    {\forall\embbUser \forall\timeMinislot \forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\urllcRateRandThreeSlotCur}
+    {\geq \demandRandThreeSlotCur}
+    {\forall\urllcUser \forall\timeMinislot}
+  \addConstraint
+    {\urllcRaSixSlotCur}
+    {\in \setDst{0, 1}}
+    {\forall\urllcUser \forall\embbUser \forall\timeMinislot \forall\baseStation \forall\subchannel}{#1}
 \end{maxi!}
 }
