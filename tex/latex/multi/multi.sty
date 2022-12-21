@@ -128,13 +128,14 @@
 \newcommand{\urllcLaFourCandidateUserCandidateCur}{\urllcLaCandidate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcLaFourCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcLaFourSlotCur}{\urllcLa_{\urllcUser, \timeSlotCur, \timeMinislot, \baseStation}}
-\newcommand{\urllcRateThreeCur}{\rate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
+\newcommand{\urllcRateThreeCur}{\sum_{\embbUser, \baseStation, \subchannel}{\urllcPeakRateFourCur \urllcRaSixCur}}
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcRateRandThreeSlotCur}{\sum_{\embbUser, \baseStation, \subchannel}{\urllcPeakRateRandFourSlotCur \urllcRaSixSlotCur}}
 \newcommand{\urllcPeakRateFour}{\peakRate_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcPeakRateFourUserCandidateCur}{\peakRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCur}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCurBaseStationCandidate}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStationCandidate}}
+\newcommand{\urllcPeakRateRandFourCur}{\peakRateRand_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateRandFourSlotCur}{\peakRateRand_{\urllcUser, \timeSlotCur, \timeMinislot, \baseStation}}
 \newcommand{\urllcMaxRate}{\const{\rate}^{mx}}
 \newcommand{\urllcMaxRateThree}{\urllcMaxRate_{\urllcUser, \timeSlot, \timeMinislot}}
@@ -145,6 +146,7 @@
 \newcommand{\demandThreeCur}{\demand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRand}{\const{\rateRand}^{dm}}
 \newcommand{\demandRandThree}{\demandRand_{\urllcUser, \timeSlot, \timeMinislot}}
+\newcommand{\demandRandThreeCur}{\demandRand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRandThreeSlotCur}{\demandRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
 \newcommand{\cost}{c}
 \newcommand{\costThree}{\cost_{\timeSlot, \baseStation, \subchannel}}
@@ -351,4 +353,38 @@
     {\in \setDst{0, 1}}
     {\forall\urllcUser \forall\embbUser \forall\timeMinislot \forall\baseStation \forall\subchannel}{#1}
 \end{maxi!}
+}
+
+\newcommand
+{\puncturingProblem}
+[1]
+{
+\begin{mini!}
+  {\urllcRaVecTwoCur, \urllcLaVecTwoCur}{\sum_{\urllcUser, \embbUser, \baseStation, \subchannel}{\frac{\embbPeakRateFourCur}{\embbMovingAverageRateTwoRelaxCur} \urllcRaSixCur}}
+  {}{}
+  \addConstraint
+    {\sum_{\baseStation}{\urllcLaFourCur}}
+    {\leq 1}
+    {\forall\urllcUser}
+  \addConstraint
+    {\urllcRaSixCur}
+    {\leq \urllcLaFourCur}
+    {\forall\urllcUser \forall\embbUser \forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\urllcLaFourCur}
+    {\in \setDst{0, 1}}
+    {\forall\urllcUser \forall\baseStation}
+  \addConstraint
+    {\sum_{\urllcUser}{\urllcRaSixCur}}
+    {\leq \embbRaFourCandidateCur}
+    {\forall\embbUser \forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\urllcRateThreeCur}
+    {\geq \demandThreeCur}
+    {\forall\urllcUser}
+  \addConstraint
+    {\urllcRaSixCur}
+    {\in \setDst{0, 1}}
+    {\forall\urllcUser \forall\embbUser \forall\baseStation \forall\subchannel}{#1}
+\end{mini!}
 }
