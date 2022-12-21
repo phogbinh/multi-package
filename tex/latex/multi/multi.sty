@@ -131,6 +131,7 @@
 \newcommand{\urllcRateThreeCur}{\sum_{\embbUser, \baseStation, \subchannel}{\urllcPeakRateFourCur \urllcRaSixCur}}
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcRateRandThreeSlotCur}{\sum_{\embbUser, \baseStation, \subchannel}{\urllcPeakRateRandFourSlotCur \urllcRaSixSlotCur}}
+\newcommand{\urllcNpRateThreeCur}{\sum_{\baseStation, \subchannel}{\urllcPeakRateFourCur \urllcNpRaFiveCur}}
 \newcommand{\urllcPeakRateFour}{\peakRate_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcPeakRateFourUserCandidateCur}{\peakRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCur}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
@@ -386,5 +387,39 @@
     {\urllcRaSixCur}
     {\in \setDst{0, 1}}
     {\forall\urllcUser \forall\embbUser \forall\baseStation \forall\subchannel}{#1}
+\end{mini!}
+}
+
+\newcommand
+{\schedulingProblem}
+[1]
+{
+\begin{mini!}[1]
+  {\urllcNpRaVecTwoCur, \urllcLaVecTwoCur}{\sum_{\urllcUser, \baseStation, \subchannel}{\costThreeCur \urllcNpRaFiveCur}}
+  {}{}
+  \addConstraint
+    {\sum_{\baseStation}{\urllcLaFourCur}}
+    {\leq 1}
+    {\forall\urllcUser}
+  \addConstraint
+    {\urllcNpRaFiveCur}
+    {\leq \urllcLaFourCur}
+    {\forall\urllcUser \forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\urllcLaFourCur}
+    {\in \setDst{0, 1}}
+    {\forall\urllcUser \forall\baseStation}
+  \addConstraint
+    {\sum_{\urllcUser}{\urllcNpRaFiveCur}}
+    {\leq 1}
+    {\forall\baseStation \forall\subchannel}
+  \addConstraint
+    {\urllcNpRateThreeCur}
+    {\geq \demandThreeCur}
+    {\forall\urllcUser}
+  \addConstraint
+    {\urllcNpRaFiveCur}
+    {\in \setDst{0, 1}}
+    {\forall\urllcUser \forall\baseStation \forall\subchannel}{#1}
 \end{mini!}
 }
