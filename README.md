@@ -4,6 +4,7 @@
 | const | constant |
 | vec | vector |
 | dst | description |
+| def | definition |
 | mat | matrix |
 | card | cardinality |
 | num | number of |
