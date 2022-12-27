@@ -57,6 +57,7 @@
 \newcommand{\sampleSpaceSet}{\mathSet{S}}
 \newcommand{\integralSet}{\mathSet{Z}}
 \newcommand{\nonnegativeIntegralSet}{\nonnegativeSet{\integralSet}}
+\newcommand{\bigO}[1]{O(#1)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PROBLEM
@@ -128,6 +129,7 @@
 \newcommand{\urllcLaVecTwoCur}{\urllcLaVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcLaVecOneSlotCur}{\urllcLaVec_{\timeSlotCur}}
 \newcommand{\urllcLaVecOneCandidateSlotCur}{\urllcLaVecCandidate_{\timeSlotCur}}
+\newcommand{\urllcLaVecTwoCandidateCur}{\urllcLaVecCandidate_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcLaVecTwoCandidateSlotCur}{\urllcLaVecCandidate_{\timeSlotCur, \timeMinislot}}
 \newcommand{\urllcLaFour}{\urllcLa_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcLaFourCandidateCur}{\urllcLaCandidate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
@@ -170,6 +172,7 @@
 \newcommand{\maxCostTwoCur}{\maxCost_{\timeSlotCur, \baseStation}}
 \newcommand{\associationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcPeakRateFourUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
 \newcommand{\nearestAssociationSubchannelsNumCandidateUserCandidateCur}{\ceil{\frac{\demandThreeUserCandidateCur}{\urllcMaxRateThreeUserCandidateCur}} \urllcLaFourCandidateUserCandidateCur}
+\newcommand{\allocatingSubchannelsNumThreeCur}{\setNum{k}_{\timeSlotCur, \timeMinislotCur, \baseStation}}
 
 \newcommand{\timeSlot}{n}
 \newcommand{\timeSlotSet}{\set{\timeSlot}}
