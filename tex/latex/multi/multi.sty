@@ -26,6 +26,11 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathAlphabet{\mathscr}{OT1}{pzc}{m}{it}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MATH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\const}{\mathrm}
@@ -38,7 +43,7 @@
 \newcommand{\subjectTo}{\middle|}
 \newcommand{\set}[1]{\mathcal{\MakeUppercase{#1}}}
 \newcommand{\setNum}[1]{\MakeUppercase{#1}}
-\newcommand{\mat}[1]{\mathrm{#1}}
+\newcommand{\mat}[1]{\mathscr{#1}}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \newcommand{\tuple}[1]{(#1)}
