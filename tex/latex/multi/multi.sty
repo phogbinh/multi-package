@@ -37,6 +37,7 @@
 \newcommand{\setDef}[1]{\setDst{0, \dots, #1 - 1}}
 \newcommand{\subjectTo}{\middle|}
 \newcommand{\set}[1]{\mathcal{\MakeUppercase{#1}}}
+\newcommand{\setNum}[1]{\MakeUppercase{#1}}
 \newcommand{\mat}[1]{\mathrm{#1}}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -57,7 +58,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\embbUser}{u}
 \newcommand{\embbUserSet}{\set{\embbUser}}
-\newcommand{\embbUsersNum}{\const{\embbUser}}
+\newcommand{\embbUsersNum}{\setNum{\embbUser}}
 \newcommand{\embbUserCandidate}{\hat{\embbUser}}
 \newcommand{\embbRa}{\alpha}
 \newcommand{\embbRaCandidate}{\hat{\embbRa}}
@@ -95,7 +96,7 @@
 
 \newcommand{\urllcUser}{v}
 \newcommand{\urllcUserSet}{\set{\urllcUser}}
-\newcommand{\urllcUsersNum}{\const{\urllcUser}}
+\newcommand{\urllcUsersNum}{\setNum{\urllcUser}}
 \newcommand{\urllcUserCandidate}{\hat{\urllcUser}}
 \newcommand{\urllcRa}{\beta}
 \newcommand{\urllcRaCandidate}{\hat{\urllcRa}}
@@ -167,25 +168,25 @@
 
 \newcommand{\timeSlot}{n}
 \newcommand{\timeSlotSet}{\set{\timeSlot}}
-\newcommand{\timeSlotsNum}{\const{\timeSlot}}
+\newcommand{\timeSlotsNum}{\setNum{\timeSlot}}
 \newcommand{\timeSlotDecrement}{\timeSlot - 1}
 \newcommand{\timeSlotCur}{\timeSlot_{0}}
 \newcommand{\nonzeroTimeSlots}{\timeSlot = 1, \dots, \timeSlotsNum - 1}
 
 \newcommand{\timeMinislot}{m}
 \newcommand{\timeMinislotSet}{\set{\timeMinislot}}
-\newcommand{\timeMinislotsNum}{\const{\timeMinislot}}
+\newcommand{\timeMinislotsNum}{\setNum{\timeMinislot}}
 \newcommand{\timeMinislotCur}{\timeMinislot_{0}}
 
 \newcommand{\baseStation}{s}
 \newcommand{\baseStationSet}{\set{\baseStation}}
-\newcommand{\baseStationsNum}{\const{\baseStation}}
+\newcommand{\baseStationsNum}{\setNum{\baseStation}}
 \newcommand{\baseStationCandidate}{\hat{\baseStation}}
 
 \newcommand{\subchannel}{l}
 \newcommand{\subchannelSet}{\set{\subchannel}}
 \newcommand{\subchannelCandidate}{\hat{\subchannel}}
-\newcommand{\subchannelsNum}{\const{\subchannel}}
+\newcommand{\subchannelsNum}{\setNum{\subchannel}}
 
 \newcommand{\rate}{r}
 \newcommand{\peakRate}{\const{\rate}}
