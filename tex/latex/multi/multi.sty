@@ -41,6 +41,7 @@
 \newcommand{\setDst}[1]{\left\{#1\right\}}
 \newcommand{\setDef}[1]{\setDst{0, \dots, #1 - 1}}
 \newcommand{\subjectTo}{\middle|}
+\newcommand{\suchThat}{\colon}
 \newcommand{\set}[1]{\mathcal{\MakeUppercase{#1}}}
 \newcommand{\setNum}[1]{\MakeUppercase{#1}}
 \newcommand{\mat}[1]{\mathscr{#1}}
@@ -56,6 +57,8 @@
 \newcommand{\nonnegativeSet}[1]{#1_{+}}
 \newcommand{\sampleSpaceSet}{\mathSet{S}}
 \newcommand{\realSet}{\mathSet{R}}
+\newcommand{\integralSet}{\mathSet{Z}}
+\newcommand{\nonnegativeIntegralSet}{\nonnegativeSet{\integralSet}}
 \newcommand{\bigO}[1]{O(#1)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,6 +142,7 @@
 \newcommand{\urllcRateRandThree}{\rateRand_{\urllcUser, \timeSlot, \timeMinislot}}
 \newcommand{\urllcRateRandThreeSlotCur}{\sum_{\embbUser, \baseStation, \subchannel}{\urllcPeakRateRandFourSlotCur \urllcRaSixSlotCur}}
 \newcommand{\urllcNpRateThreeCur}{\sum_{\baseStation, \subchannel}{\urllcPeakRateFourCur \urllcNpRaFiveCur}}
+\newcommand{\urllcPeakRateVecTwoCur}{\peakRateVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcPeakRateFour}{\peakRate_{\urllcUser, \timeSlot, \timeMinislot, \baseStation}}
 \newcommand{\urllcPeakRateFourUserCandidateCur}{\peakRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur, \baseStation}}
 \newcommand{\urllcPeakRateFourCur}{\peakRate_{\urllcUser, \timeSlotCur, \timeMinislotCur, \baseStation}}
@@ -150,6 +154,8 @@
 \newcommand{\urllcMaxRateThreeUserCandidateCur}{\urllcMaxRate_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\urllcMaxRateThreeCur}{\urllcMaxRate_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demand}{\const{\rate}^{demand}}
+\newcommand{\demandVec}{\vec{\const{\rate}}^{demand}}
+\newcommand{\demandVecTwoCur}{\demandVec_{\timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandThreeUserCandidateCur}{\demand_{\urllcUserCandidate, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandThreeCur}{\demand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRand}{\const{\rateRand}^{demand}}
@@ -157,6 +163,8 @@
 \newcommand{\demandRandThreeCur}{\demandRand_{\urllcUser, \timeSlotCur, \timeMinislotCur}}
 \newcommand{\demandRandThreeSlotCur}{\demandRand_{\urllcUser, \timeSlotCur, \timeMinislot}}
 \newcommand{\cost}{c}
+\newcommand{\costVec}{\vec{\cost}}
+\newcommand{\costVecOneCur}{\costVec_{\timeSlotCur}}
 \newcommand{\costThree}{\cost_{\timeSlot, \baseStation, \subchannel}}
 \newcommand{\costThreeCur}{\cost_{\timeSlotCur, \baseStation, \subchannel}}
 \newcommand{\costThreeCurSubchannelCandidate}{\cost_{\timeSlotCur, \baseStation, \subchannelCandidate}}
@@ -197,6 +205,7 @@
 
 \newcommand{\rate}{r}
 \newcommand{\peakRate}{\const{\rate}}
+\newcommand{\peakRateVec}{\vec{\peakRate}}
 \newcommand{\movingAverageRate}{\tilde{\rate}}
 \newcommand{\rateRand}{R}
 \newcommand{\peakRateRand}{\const{\rateRand}}
@@ -209,6 +218,9 @@
 \newcommand{\utilityCompositeFunction}[1]{\ln{#1}}
 
 \newcommand{\smoothingFactor}{\epsilon}
+
+\newcommand{\sparseUrllcTraffic}{\subchannelsNum \geq \max_{\baseStation}{\sum_{\urllcUser}{\ceil{\frac{\demandThreeCur}{\urllcPeakRateFourCur}}}}}
+\newcommand{\decisionProblemInstanceSet}{\set{p}}
 
 \newcommand
 {\embbMovingAverageRateInitialValuePolicy}
