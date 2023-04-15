@@ -15,3 +15,4 @@
 | slot | time slot |
 | np | non-puncturing |
 | bpsl | bits per time slot |
+| pp | partition problem |
